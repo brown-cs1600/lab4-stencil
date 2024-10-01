@@ -90,7 +90,7 @@ void initNoteGPT() {
 void noteISR() {
   // stop the GPT3 counter
   
-  // Stop current note and play the next note (just like loop did)
+  // Stop current note and play the next note (just like loop/playNoteDuration did)
 
   // Set up the next noteISR by setting a counter value and turning on GPT3 counter
   
