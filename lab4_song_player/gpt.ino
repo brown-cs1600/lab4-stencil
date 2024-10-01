@@ -81,11 +81,18 @@ void gptISR() {
 
 /* TODO step 4: Enable interrupt to control which notes are played when */
 void initNoteGPT() {
+  // Setp up GPT3 (similarly to what initGPT did for GPT2)
 
+  // kick off first noteISR by setting a counter value and turning on the counter
 }
 
 /* TODO step 4: make an ISR control the song, instead of loop() */
 void noteISR() {
+  // stop the GPT3 counter
+  
+  // Stop current note and play the next note (just like loop did)
+
+  // Set up the next noteISR by setting a counter value and turning on GPT3 counter
   
   // Remember to clear any pending flags!
 
