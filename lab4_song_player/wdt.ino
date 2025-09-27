@@ -1,4 +1,5 @@
 /* Initialize the WDT peripheral */
+/*
 void initWDT() {
   // TODO step 3 (prelab Qs6.1-6.2)
   // Remember to use a 100% refresh window, unlike the prelab!
@@ -14,7 +15,7 @@ void initWDT() {
   R_WDT->___= ;
   R_ICU->IELSR[WDT_INT] = ;
   // CMSIS
-}
+}*/
 
 /* pet the watchdog */
 void petWDT() {
