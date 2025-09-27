@@ -54,7 +54,7 @@ void stopPlay() {
   R_ICU->___ = ;
   
   // TODO step 2: Turn off pin
-  R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].___ = ;
+  // R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].___ = ;
 }
 
 /*
@@ -71,7 +71,7 @@ void gptISR() {
   intcount++; // USED FOR TESTING: DO NOT REMOVE
 
   // TODO step 2: Toggle output pin (use lab3 as reference if needed)
-  R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].___ = ;
+  // R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].___ = ;
 
   // TODO step 1: restart count
 
