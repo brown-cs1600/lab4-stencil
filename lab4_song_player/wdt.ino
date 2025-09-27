@@ -2,7 +2,6 @@
 /*
 void initWDT() {
   // TODO step 3 (prelab Qs6.1-6.2)
-  // Remember to use a 100% refresh window, unlike the prelab!
   R_WDT->WDTCR = ;
 
   // Enable WDT when debugger is connected
