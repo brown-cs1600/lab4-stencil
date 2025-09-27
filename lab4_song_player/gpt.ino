@@ -62,7 +62,7 @@ void stopPlay() {
  * Blocking: everything except interrupts will have to wait for this function
  */
 void playNoteDuration(int freq, int durMillis) {
-  // TODO step 1: use playNote and stopPlay to write this function
+  // TODO step 1: use playNote, delay (Arduino built-in), and stopPlay to write this function
 
 }
 
