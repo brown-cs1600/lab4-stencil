@@ -9,8 +9,8 @@
 const int CLOCKFREQ = ;
 
 // TODO step 2: configure port and pin for Arduino D4
-const int OUT_PORT = ;
-const int OUT_PIN = ;
+// const int OUT_PORT = ;
+// const int OUT_PIN = ;
 
 const String song = "spooky:d=4,o=6,b=127:8c,f,8a,f,8c,b5,2g,8f,e,8g,e,8e5,a5,2f,8c,f,8a,f,8c,b5,2g,8f,e,8c,d,8e,1f,8c,8d,8e,8f,1p,8d,8e,8f_"
 //const String song = "Short:d=16,o=5,b=140:b,8p,b,b,2b";
@@ -24,15 +24,8 @@ void setup() {
   Serial.begin(9600);
   while (!Serial);
 
-  // Grab some *unused* CPU interrupts
-  TIMER_INT = getNextCPUINT(1);
-  WDT_INT = getNextCPUINT(TIMER_INT);
-  NOTE_INT = getNextCPUINT(WDT_INT);
-
-  analogWriteResolution(10);
-
   // TODO step 2: Set piezo speaker as output (refer to lab 3 as needed)
-  R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].___ = ;
+  // R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].___ = ;
 
   // TODO step 2: uncomment to parse song
   /*
