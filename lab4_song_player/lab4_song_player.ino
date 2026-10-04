@@ -1,16 +1,13 @@
 #include "rtttl_parser.h"
 #include "lab4.h"
 
-// TODO step 5
-//#define SINUSOID
-
-// TODO step 1 (Prelab Q4.3)
-// Make sure this is in Hz! (i.e. since prelab was in MHz, multiply by the correct magnitude)
+// TODO step 1: GPT2 clock frequency after pre-scaling (foundation Q4.3)
+// Make sure this is in Hz! (i.e. since foundation was in MHz, multiply by the correct magnitude)
 const int CLOCKFREQ = ;
 
-// TODO step 2: configure port and pin for Arduino D4
-// const int OUT_PORT = ;
-// const int OUT_PIN = ;
+// TODO step 2: set constants to correspond to pin D4
+//const int OUT_PORT = ;
+//const int OUT_PIN = ;
 
 const String song = "spooky:d=4,o=6,b=127:8c,f,8a,f,8c,b5,2g,8f,e,8g,e,8e5,a5,2f,8c,f,8a,f,8c,b5,2g,8f,e,8c,d,8e,1f,8c,8d,8e,8f,1p,8d,8e,8f_";
 //const String song = "Short:d=16,o=5,b=140:b,8p,b,b,2b";
@@ -24,38 +21,50 @@ void setup() {
   Serial.begin(9600);
   while (!Serial);
 
-  // TODO step 2: Set piezo speaker as output (refer to lab 3 as needed)
-  // R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].___ = ;
+  // TODO step 2: configure pin D4 as GPIO output
+  //R_PFS->PORT[OUT_PORT].PIN[OUT_PIN].PmnPFS...
 
-  // TODO step 2: uncomment to parse song
+  // TODO step 2: uncomment (once done testing)
   /*
   songLen = rtttlToBuffers(song, noteFrequencies, noteDurations);
   if (songLen == -1) {
     Serial.println("ERROR PARSING SONG!");
     while(true);
-  }*/
+  }
+  */
+  
+  // TODO step 1: pass correct TPCS bits to prescale GPT2 (foundation Q5.1)
+  configureGPT(R_GPT2, ___);
+  // TODO step 1: pass correct IELS bits to configure GPT2 ISR (foundation Q5.4)
+  configureMCUInterrupt(PIN_INT, ___, &pinISR);
 
-  initGPT();
-  Serial.println("GPT initialized!");
+  // TODO step 4: setup GPT3 (use the datasheet to look up the appropriate bit values!)
+  // These will both be DIFFERENT values from the GPT2 values above
+  //configureGPT(R_GPT3, ___);
+  //configureMCUInterrupt(NOTE_INT, ___, &noteISR);
+  
+  // TODO step 4: kick off first GPT3 interrupt
+  //startGPTcount(R_GPT3, ___);
 
   intcount = 0; // for testing notes
-  // TODO step 2: comment out once done testing
+  // TODO step 2: remove once done testing
   testAllNotes();
 
   // TODO step 3: uncomment for WDT
   //initWDT();
-  // pet WDT once to start the peripheral
+  // TODO step 3: pet WDT once to start the peripheral
   //petWDT();
 }
 
-
 void loop() {
-  // TODO step 2: play a song
+  // TODO step 2: play song stored in noteFrequencies/noteDurations
   // one call of loop() = one note of song played
   // player should pause for 2 seconds before resuming song
 
+  static int songPos = 0;
+
   // TODO step 3: pet the watchdog
-  // petWDT();
+  //petWDT();
 
   // TODO step 4: comment out the body of this function (or just put a return at the beginning)
 }
