@@ -39,7 +39,7 @@ void configureGPT(R_GPT0_Type* r_gpt, unsigned int TPCS_bits) {
 //                 R_GPT2 or R_GPT3
 void startGPTcount(R_GPT0_Type* r_gpt, unsigned int ticks) {
   GPT_OFF(r_gpt);
-  // TODO step 1: configure count (foundation Q5.3)
+  // TODO step 1: configure count (foundation Q5.2)
   r_gpt->___ = ticks;
   GPT_START(r_gpt);
 }
